@@ -8,19 +8,21 @@
     <title>SvgTest</title>
 </head>
 <body>
-    <h2>SVG TEST! ver 1.5</h2>
-    <h4>Current room: <span id = "roomNo"></span><span id = "alert"></span></h4>
-    <h4><span class = 'own'>Booked by current user:</span></h4> <p id = "bookedByCurrent"></p>
-    <h4><span class = 'another'>Booked by another users:</span></h4> <p id = "bookedByAnother"></p>
-    <h5 id = "pointerView"></h5>
-    <h5 id = "pointerView2"></h5>
-    <h5 id = "zoom"></h5>
+    <div class="panel">
+        <h2>SVG TEST! ver 1.5</h2>
+        <h4>Current room: <span id = "roomNo"></span><span id = "alert"></span></h4>
+        <h4><span class = 'free'>Free:</span></h4> <p id = "free"></p>
+        <h4><span class = 'booked'>Booked:</span></h4> <p id = "booked"></p>
+        <h4 id = "message"></h4>
+        <h5 id = "pointerView"></h5>
+        <h4 id = ></h4>
+        <button id = "buttonBook">Book ?</button>
+        <h5 id = "zoom"></h5>
+    </div>
+
     <div class="main">
         <object class="layer" id = "svgObj" data="./svg/combine.svg" type="image/svg+xml">
         </object>
-        <!-- <object class="layer" id = "svgObj2" data="./svg/test.svg" type="image/svg+xml">
-        </object> -->
-
     </div>
     <script src = "main.js"></script>
 </body>

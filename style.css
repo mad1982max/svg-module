@@ -17,12 +17,12 @@ h4 {
     padding: 5px;
 }
 
-.own {
+.free {
     padding: 5px;
-    background: lightblue;
+    background: lightgreen;
 }
 
-.another {
+.booked {
     padding: 5px;
     background: rgb(241, 123, 123);
 }
@@ -49,3 +49,31 @@ object {
 #pointer {
   animation: fade-in 1s ease;
 }
+
+#buttonBook {
+    position: absolute;
+    top: 765px;
+    left: 295px;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    background: rgb(42, 86, 143);
+    color: white;
+    font-size: 15px;
+    display: none;
+}
+
+#message {
+    position: absolute;
+    top: 700px;
+    left: 295px;
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.panel {
+    width: 150px;
+}
+
