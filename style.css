@@ -1,0 +1,51 @@
+body {
+    overflow: hidden;
+}
+
+.main {
+	position: absolute;
+    top: 10px;
+    left: 400px;
+    overflow: hidden;
+}
+
+#svgObj1 {
+    z-index: 100;
+}
+
+h4 {
+    padding: 5px;
+}
+
+.own {
+    padding: 5px;
+    background: lightblue;
+}
+
+.another {
+    padding: 5px;
+    background: rgb(241, 123, 123);
+}
+
+#alert{
+    font-size: 14px;
+    color: red;
+}
+
+object {
+    border: 2px solid rgb(151, 153, 151);
+    overflow: hidden;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#pointer {
+  animation: fade-in 1s ease;
+}
