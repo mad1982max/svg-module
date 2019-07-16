@@ -9,8 +9,16 @@
 </head>
 <body>
     <div class="panel">
-        <h2>SVG TEST! ver 1.5</h2>
-        <h4>Current room: <span id = "roomNo"></span><span id = "alert"></span></h4>
+        <h2>BOOKING</h2>
+        <div class="wrapper">
+            <h4>Current room:</h4> 
+            <p><span id = "roomNo"></span></p>
+            <p id = "alert">Click on room</p>
+        </div>
+        <p>Set temp to all rooms:</p>
+        <input id = "temp" type="number" min="10" max="40" value="10">
+        <button id = "showTemp">SET</button>
+        
         <h4><span class = 'free'>Free:</span></h4> <p id = "free"></p>
         <h4><span class = 'booked'>Booked:</span></h4> <p id = "booked"></p>
         <h4 id = "message"></h4>

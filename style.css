@@ -52,7 +52,7 @@ object {
 
 #buttonBook {
     position: absolute;
-    top: 765px;
+    top: 10px;
     left: 295px;
     width: 100px;
     height: 50px;
@@ -61,6 +61,7 @@ object {
     color: white;
     font-size: 15px;
     display: none;
+    border: none;
 }
 
 #message {
@@ -75,5 +76,35 @@ object {
 
 .panel {
     width: 150px;
+}
+
+h4 {
+    margin-bottom: 5px;
+}
+
+p {    
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;;
+}
+
+#roomNo {
+    background: rgb(240, 231, 231);
+}
+
+.wrapper {
+    height: 80px;
+}
+
+#showTemp {
+    /* width: 50px;
+    height: 50px; */
+    margin-top: 5px;;
+    padding: 5px;
+    border-radius: 5px;
+    background: rgb(202, 73, 14);
+    color: white;
+    font-size: 15px;
+    border: none
 }
 
