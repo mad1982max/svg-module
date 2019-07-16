@@ -18,7 +18,7 @@ window.onload = () => {
             "temperature": 26,
             "presence": true,
             "booked": false,
-            "id": 'product-04-X03-D'
+            "id": 'product-04-X03-C'
         },
         {
             "bookable": true,
@@ -29,7 +29,7 @@ window.onload = () => {
             "temperature": 15,
             "presence": true,
             "booked": false,
-            "id": 'product-04-Y04-C'
+            "id": 'product-04-X04-D'
         },
         {
             "bookable": true,
@@ -40,7 +40,7 @@ window.onload = () => {
             "temperature": 23.5,
             "presence": true,
             "booked": true,
-            "id": 'product-04-X11-C'
+            "id": 'product-04-X12-C'
         },
         {
             "bookable": true,
@@ -51,7 +51,7 @@ window.onload = () => {
             "temperature": 23.5,
             "presence": true,
             "booked": false,
-            "id": 'product-04-X-11-I'
+            "id": 'product-04-X13-D'
         },
         {
             "bookable": true,
@@ -62,7 +62,7 @@ window.onload = () => {
             "temperature": 30,
             "presence": true,
             "booked": false,
-            "id": 'product-04-Y12-J'
+            "id": 'product-04-Y04-D'
         },
         {
             "bookable": true,
@@ -72,8 +72,8 @@ window.onload = () => {
             "name": "Room 6",
             "temperature": 20,
             "presence": true,
-            "booked": false,
-            "id": 'product-04-Y13-D'
+            "booked": true,
+            "id": 'product-04-Y12-D'
         },
         {
             "bookable": true,
@@ -84,7 +84,7 @@ window.onload = () => {
             "temperature": 10,
             "presence": true,
             "booked": false,
-            "id": 'product-04-X13-C'
+            "id": 'product-04-Y04-C'
         },
         {
             "bookable": true,
@@ -95,7 +95,7 @@ window.onload = () => {
             "temperature": 20,
             "presence": true,
             "booked": false,
-            "id": 'product-04-X06-C'
+            "id": 'product-04-Y06-C'
         },
         {
             "bookable": true,
@@ -106,7 +106,7 @@ window.onload = () => {
             "temperature": 30,
             "presence": true,
             "booked": false,
-            "id": 'product-04-X09-D'
+            "id": 'product-04-Y09-D'
         },
         {
             "bookable": true,
@@ -117,7 +117,7 @@ window.onload = () => {
             "temperature": 34,
             "presence": true,
             "booked": false,
-            "id": 'product-04-Y11-D'
+            "id": 'product-04-Y12-C'
         },
         {
             "bookable": true,
@@ -128,7 +128,7 @@ window.onload = () => {
             "temperature": 26,
             "presence": true,
             "booked": false,
-            "id": 'product-04-Y09-I'
+            "id": 'product-04-X13-I'
         },
         {
             "bookable": true,
@@ -139,7 +139,7 @@ window.onload = () => {
             "temperature": 40,
             "presence": true,
             "booked": false,
-            "id": 'product-04-Y11-C'
+            "id": 'product-04-Y09-H'
         },
         {
             "bookable": true,
@@ -172,7 +172,7 @@ window.onload = () => {
             "temperature": 18,
             "presence": true,
             "booked": true,
-            "id": 'product-04-Y06-I'
+            "id": 'product-04-X13-H'
         },
         {
             "bookable": true,
@@ -183,7 +183,7 @@ window.onload = () => {
             "temperature": 22,
             "presence": true,
             "booked": true,
-            "id": 'product-04-Y13-C'
+            "id": 'product-04-X-11-H'
         },
         
         {

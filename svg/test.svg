@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id = "svg"
-    width = "550" height = "800" viewBox = "5 20 70 80">
+    width = "550" height = "800" viewBox = "12 -80 70 80">
 <defs>
     <style>.a{fill:none;}.b{fill:#fff;}.c{clip-path:url(#a);}.d{fill:#b4897d;}.e{fill:#88645f;}.f{fill:#f8cdc3;}.g{fill:#009e7d;}</style>
 </defs>
 
-<g class="c">
+<g class="c" transform="scale(1, -1), rotate(-28)">
     <path class="d" d="M72.6856,36.4548,57.7324,31.37l-4.29,7.97L35.81,43.2755l-.5753-2.5837a.6361.6361,0,0,1,.0093-.3128l.785-2.75a.49.49,0,0,0-.0512-.3854l-2.85-4.7369L30.7976,22.04l-.057-.0192L7.3561,14.17l21.2583,95.4622,4.1653.5833.0353-.065Zm-36.953,6.8381-.1927.043L33.1831,32.7518,35.91,37.2844a.41.41,0,0,1,.0428.3224l-.7851,2.75a.72.72,0,0,0-.01.352ZM57.8344,31.6293l14.544,4.946L32.6628,109.9838l-3.8727-.5423L7.6458,14.4915l22.97,7.7118,2.203,9.8931-.0222.0133.04.0665L35.3784,43.59l.1039-.0232,18.1014-4.04Z"/>
     <rect x="37.2776" y="62.7004" width="0.0641" height="0.1065" transform="translate(-28.6787 31.5196) rotate(-33.9373)"/>
     <rect class="d" x="34.4628" y="61.5942" width="1.6033" height="0.0532" transform="translate(-31.7683 38.2261) rotate(-40.9791)"/>
@@ -210,7 +210,7 @@
     <rect class="d" x="20.1644" y="37.3562" width="0.5" height="0.1064" transform="translate(-7.3993 5.12) rotate(-12.1198)"/>
     <polygon class="d" points="20.15 36.882 20.215 37.18 20.458 37.128 20.48 37.232 20.133 37.307 20.048 36.909 20.15 36.882"/>
 </g>
-<g id="storey-U3">
+<g transform="scale(1, -1), rotate(-28)" id="storey-U3">
         <g id="product-U3-Y03-D">
         </g>
         <g id="product-U3-Y03-B">
@@ -4664,7 +4664,7 @@
         <g id="product-02-Y12-Pb">
         </g>
     </g>
-    <g id="storey-03">
+    <g transform="scale(1, -1), rotate(-28)" id="storey-03">
         <g id="product-03-Y06-E">
         </g>
         <g id="product-03-Y10-J">
@@ -5508,7 +5508,7 @@
         <g id="product-03-Y12-B">
         </g>
     </g>
-    <g id="storey-04">
+    <g transform="scale(1, -1), rotate(-28)" id="storey-04">
         <g id="product-04-X01-B">
             <path style="stroke:blue; fill:none; pointer-events:visible; opacity:0.1; stroke-width:0.05;" d="M30.8675,105.526 L30.2839,102.891 L27.2358,103.566 L27.8194,106.201 L30.8675,105.526"/>
         </g>
