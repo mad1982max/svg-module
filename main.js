@@ -248,7 +248,7 @@ window.onload = () => {
 }
 //----------------show signs and temp------------------------------
     showRoomsInPanel()
-    showSigns();
+    //showSigns();
     //showTemp();
     highlightRooms();
 //--------------------------showSigns------------------------------
