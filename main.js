@@ -8,7 +8,8 @@ window.onload = () => {
     let zoom = 1;
     let bookable = [];
     let nonBookable = [];
-    let rooms = [
+    let rooms = 
+    [
         {
             "bookable": true,
             "co2": 300,
@@ -210,26 +211,29 @@ window.onload = () => {
 
     let tempLayer;
     let zoomStepView = document.getElementById("zoom");
-    let zoomInformer = document.getElementById('zoomInformer');
-    let zoomer = document.getElementById('zoomer');
     let pointerSvg = document.getElementById('pointerView');
     let svgObj = document.getElementById('svgObj');
     let svgDocument = svgObj.contentDocument;
     let grid = svgDocument.getElementById('svg');
-    let main = document.getElementById('main');
     let currentRoom = document.getElementById('roomNo');
     let alert = document.getElementById('alert');
     let buttonBook = document.getElementById('buttonBook');
-    let message = document.getElementById('message');
     let free = document.getElementById('free');
     let booked = document.getElementById('booked');
-
+    let showTempBtn = document.getElementById('showTemp');
+    let reset = document.getElementById('reset');
     //-------------------------------------------------------------------------
-    buttonBook.onclick = book;
-
-    //----------------filter all rooms (parsm - bookkable)----------------------------
+    buttonBook.addEventListener("click", book);
+    grid.addEventListener("click", click);
+    showTempBtn.addEventListener("click", setTemp);
+    reset.addEventListener("click", resetTemp);
+    
     filterBookable(rooms);
-
+    showRoomsInPanel();
+    highlightRooms();
+    //showSigns();
+    //showTemp();    
+//----------------filter all rooms (parsm - bookkable)----------------------------
     function filterBookable(arr) {
         bookable = arr.filter(space => space.bookable === true);
         nonBookable = arr.filter(space => space.bookable === false);
@@ -239,19 +243,15 @@ window.onload = () => {
         free.innerText = bookable.filter(room => !room.booked).map(el => el.id).join(', ')
         booked.innerText = bookable.filter(room => room.booked).map(el => el.id).join(', ')
     }
-    //---------------------------showFree & bokkable----------------------------------------
+    //-----------------showFree & bokkable--------------------------------
     function highlightRooms() {
         bookable.forEach(el => {
         let color = el.booked ? bookedColor: freeColor;
         grid.getElementById(el.id).firstElementChild.style.cssText = `fill: ${color}; opacity: 0.7`;
     })
 }
-//----------------show signs and temp------------------------------
-    showRoomsInPanel()
-    //showSigns();
-    //showTemp();
-    highlightRooms();
-//--------------------------showSigns------------------------------
+    
+//--------------------------showSigns---deactiv------------------------
     function showSigns() {
         let signGroupSVG = document.createElementNS(svgNameSpace, 'g');
         signGroupSVG.setAttributeNS(null, 'id', 'signs');
@@ -293,9 +293,7 @@ window.onload = () => {
             return {xCenter, yCenter}
     }
 
-//--------------click on svg-----------------------------
-    grid.addEventListener("click", click);
-
+//--------------click on svg-----------------------------    
     function click(e) {
         let curSquare = e.target.parentElement.id;
         let clickedRoom = rooms.find(r => r.id === curSquare);
@@ -308,37 +306,24 @@ window.onload = () => {
             } else {
                 buttonBook.style.display = 'inherit';
             }
-
         } else {
             currentRoom.innerText = ''
             alert.innerText = 'NOT A ROOM';
             buttonBook.style.display = 'none';
         }
-
-        // let curSquare = e.target.parentElement.id;
-        // let clickedRoom = rooms.find(r => r.id === curSquare);
-
-        // if(clickedRoom) {
-        //     currentRoom.innerText = curSquare;
-        //     alert.innerText = '';
-        //     if (zoom > 0.2) zoomToRoom(curSquare);
-        //     if(!clickedRoom.booked) showBookingIcon();
-        //     message.innerText = clickedRoom.id;
-        // } else {
-        //     alert.innerText = 'NOT A ROOM';
-        //     currentRoom.innerText = "";
-        //     message.innerText = 'choose a room'
-        // }
     }
 
 //------------------set temp-------------------------
-let showTempBtn = document.getElementById('showTemp');
 
-showTempBtn.onclick = setTemp;
-function setTemp(t) {
-    let tempToSet = document.getElementById('temp').value;
-    showTemp(tempToSet)
+function setTemp() {
+    if(tempLayer) resetTemp();
+    let tempToSet = +document.getElementById('temp').value;
+    if(isNumeric(tempToSet) && tempToSet < 41 && tempToSet != 0) showTemp(Math.round(tempToSet))
 }
+//-----------------isNumber--------------------------
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+  }
 //---------------showBookingIcon----------------------
 function showBookingIcon() {
     console.log('show button');
@@ -359,13 +344,15 @@ function createEl(x, y, fileName) {
 //-----------------createTempSign---------------------------
 function createTempSign(x, y, temp) {
     let newCoord = screenToSVG(x, y);
-    let color = temp > rangeOfTemp? 'green': 'red';
+    let color = temp > rangeOfTemp? bookedColor: freeColor;
     let g = document.createElementNS(svgNameSpace, 'g');
     g.setAttributeNS(null, "pointer-events", "none");
     let circle = document.createElementNS(svgNameSpace, 'circle');
     circle.setAttributeNS(null, 'cx', newCoord.x);
     circle.setAttributeNS(null, 'cy', newCoord.y);
-    circle.setAttributeNS(null, 'fill', color);
+    circle.setAttributeNS(null, 'fill', 'white');
+    circle.setAttributeNS(null, 'stroke', color);
+    circle.setAttributeNS(null, 'stroke-width', '0.1');
     circle.setAttributeNS(null, 'r', 1);
 
     let text = document.createElementNS(svgNameSpace, 'text');
@@ -375,8 +362,8 @@ function createTempSign(x, y, temp) {
     text.setAttributeNS(null, 'dy', 0.35);
     text.setAttributeNS(null, 'text-anchor', 'middle');
     text.setAttributeNS(null, 'font-size', '1px');
-    text.setAttributeNS(null, 'style', 'fill:white');
-    text.setAttributeNS(null, 'font-weight', 'bold');
+    text.setAttributeNS(null, 'style', 'fill:#b4897d');
+    text.setAttributeNS(null, 'font-family', 'arial');
     let textNode = document.createTextNode(temp);
     text.appendChild(textNode);
     g.appendChild(circle);
@@ -413,9 +400,7 @@ grid.addEventListener('mousemove', function(event) {
             }
             zoomStepView.innerText = zoom.toFixed(2);
             let newData = `${+x} ${+y} ${+w} ${+h}`;
-            grid.setAttribute('viewBox', newData);
-        
-              
+            grid.setAttribute('viewBox', newData);              
 
         // if(zoom < 0.7) {
         //     tempLayer.setAttribute('style', 'opacity:1');
@@ -496,7 +481,15 @@ grid.addEventListener('mousemove', function(event) {
         grid.getElementById(current).firstElementChild.style.cssText = `fill: ${bookedColor}; opacity: 0.7`;
 
         showRoomsInPanel();
-    }     
+    } 
+//----------------------reset-----------------------------
+    function resetTemp() {
+        if(!tempLayer) return       
+        tempLayer.parentNode.removeChild(tempLayer);
+        tempLayer = null;
+    }
+}
+
     
     //----------------------zoomToRoom-----------------------------
     // function zoomToRoom(id){
@@ -519,5 +512,3 @@ grid.addEventListener('mousemove', function(event) {
     //     grid.setAttribute('viewBox', newData); 
     //     tempLayer.setAttribute('style', 'opacity:1');     
     // }
-
-}

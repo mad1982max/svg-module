@@ -1,12 +1,15 @@
 body {
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .main {
+    height: 100vh;
+    width: 66%;
 	position: absolute;
     top: 10px;
-    left: 400px;
     overflow: hidden;
+    right: 0px;
 }
 
 #svgObj1 {
@@ -32,28 +35,16 @@ h4 {
     color: red;
 }
 
+
 object {
     border: 2px solid rgb(151, 153, 151);
     overflow: hidden;
 }
 
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-#pointer {
-  animation: fade-in 1s ease;
-}
-
 #buttonBook {
     position: absolute;
     top: 10px;
-    left: 295px;
+    left: 150px;
     width: 100px;
     height: 50px;
     border-radius: 5px;
@@ -96,15 +87,23 @@ p {
     height: 80px;
 }
 
-#showTemp {
-    /* width: 50px;
-    height: 50px; */
+#showTemp, #reset {
+    width: 60px;
     margin-top: 5px;;
     padding: 5px;
     border-radius: 5px;
-    background: rgb(202, 73, 14);
+    background: rgb(153, 151, 149);
     color: white;
     font-size: 15px;
     border: none
+}
+
+#temp {
+    width: 60px;
+}
+
+#reset {
+    width: 130px;
+    background: rgb(185, 62, 62);
 }
 
