@@ -116,10 +116,10 @@ window.onload = () => {
             "waitingTimeSec": 0,
             "lux": 153.04,
             "name": "Room 10",
-            "temperature": 21,
+            "temperature": 34,
             "presence": true,
-            "booked": true,
-            "id": 'product-04-Y11-C'
+            "booked": false,
+            "id": 'product-04-Y11-D'
         },
         {
             "bookable": true,
