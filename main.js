@@ -4,7 +4,7 @@ window.onload = () => {
     let freeColor = '#99ff99';
     let icoWidth = 3;
     let rangeOfTemp = 25;
-    let zoomStep = 1.1;
+    let zoomStep = 1.2;
     let zoom = 1;
     let bookable = [];
     let nonBookable = [];
@@ -393,27 +393,29 @@ grid.addEventListener('mousemove', function(event) {
     grid.onwheel = ZoomInOut;
 
     function ZoomInOut(e) {
-        let wBox = grid.getAttribute('width');
-        let hBox = grid.getAttribute('height');
-        let [x, y, w, h] = grid.getAttribute('viewBox').split(' ');        
-
-        if(e.deltaY > 0) {
-            x -= e.clientX / wBox * (w * zoomStep - w);
-            y -= e.clientY / hBox * (h * zoomStep - h);
-            w *= zoomStep;
-            h *= zoomStep;
-            zoom *= zoomStep;
-
-        } else {
-            x -= e.clientX / wBox * (w / zoomStep - w);
-            y -= e.clientY / hBox * (h / zoomStep - h);
-            w /= zoomStep;
-            h /= zoomStep;
-            zoom /= zoomStep;            
-        }
-        zoomStepView.innerText = zoom.toFixed(2);
-        let newData = `${+x} ${+y} ${+w} ${+h}`;
-        grid.setAttribute('viewBox', newData);      
+            let wBox = grid.getAttribute('width');
+            let hBox = grid.getAttribute('height');
+            let [x, y, w, h] = grid.getAttribute('viewBox').split(' ');        
+    
+            if(e.deltaY > 0) {
+                x -= e.clientX / wBox * (w * zoomStep - w);
+                y -= e.clientY / hBox * (h * zoomStep - h);
+                w *= zoomStep;
+                h *= zoomStep;
+                zoom *= zoomStep;
+    
+            } else {
+                x -= e.clientX / wBox * (w / zoomStep - w);
+                y -= e.clientY / hBox * (h / zoomStep - h);
+                w /= zoomStep;
+                h /= zoomStep;
+                zoom /= zoomStep;            
+            }
+            zoomStepView.innerText = zoom.toFixed(2);
+            let newData = `${+x} ${+y} ${+w} ${+h}`;
+            grid.setAttribute('viewBox', newData);
+        
+              
 
         // if(zoom < 0.7) {
         //     tempLayer.setAttribute('style', 'opacity:1');
